@@ -1,10 +1,13 @@
-from . import views
-from django.contrib import admin
-from django.views.generic.base import TemplateView
 from django.urls import path
+from django.views.generic.base import TemplateView
+from .views import PhoneCallBackView
+# from .views import phone
 
 urlpatterns = [
-    path('', TemplateView.as_view(
-        template_name="landing/index.html"
-    ), name='home'),
+    path('',
+         PhoneCallBackView.as_view(),
+         name='home'),
+    # path('',
+    #      phone,
+    #      name='home'),
 ]
